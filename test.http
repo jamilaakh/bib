@@ -1,0 +1,93 @@
+POST http://127.0.0.1:8000/api/register
+content-type: application/json
+
+{
+    "nom": "akhezane",
+    "prenom": "jij",
+    "tel": "0606060606",
+    "email": "test@gmail.com",
+    "password": "test@gmail.com"
+}
+###
+
+POST http://127.0.0.1:8000/api/login
+content-type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test@gmail.com"
+}
+###
+
+POST http://127.0.0.1:8000/api/logout
+content-type: application/json
+
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQwMTU1NTA1LCJleHAiOjE3NDAxNTkxMDUsIm5iZiI6MTc0MDE1NTUwNSwianRpIjoibVh6SHpIRWs2ZTVmU2ZVOSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.QXjE3pPmnoLD7IN5D-O1lhzdRqmxUn72Z1EARTbq1Ag
+
+###
+
+GET http://127.0.0.1:8000/api/books
+content-type: application/json
+
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQwMTU0NTUwLCJleHAiOjE3NDAxNTgxNTAsIm5iZiI6MTc0MDE1NDU1MCwianRpIjoibW9tTVFyYTVmd3hjQjUwYyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.b7WeZiMzkCIPdXyxhsqQTCfbf6AjI2Vr4hf0pOzgBjU
+{
+}
+###
+
+POST http://127.0.0.1:8000/api/books
+content-type: application/json
+
+{
+    "title": "Test",
+    "description": "Test",
+    "type": "Essai",
+    "language": "Italien",
+    "editor": "Testing",
+    "category": "Documentaires",
+    "price": 22.00,
+    "author": "Test",
+    "cover": "no_cover.png"
+}
+###
+
+GET http://127.0.0.1:8000/api/books/13
+content-type: application/json
+
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQwMTU0NTUwLCJleHAiOjE3NDAxNTgxNTAsIm5iZiI6MTc0MDE1NDU1MCwianRpIjoibW9tTVFyYTVmd3hjQjUwYyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.b7WeZiMzkCIPdXyxhsqQTCfbf6AjI2Vr4hf0pOzgBjU
+{
+    
+}
+
+GET http://127.0.0.1:8000/api/books/14
+content-type: application/json
+
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQwMTU0NTUwLCJleHAiOjE3NDAxNTgxNTAsIm5iZiI6MTc0MDE1NDU1MCwianRpIjoibW9tTVFyYTVmd3hjQjUwYyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.b7WeZiMzkCIPdXyxhsqQTCfbf6AjI2Vr4hf0pOzgBjU
+{
+    
+}
+###
+
+DELETE http://127.0.0.1:8000/api/books/15
+content-type: application/json
+
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQwMTU0NTUwLCJleHAiOjE3NDAxNTgxNTAsIm5iZiI6MTc0MDE1NDU1MCwianRpIjoibW9tTVFyYTVmd3hjQjUwYyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.b7WeZiMzkCIPdXyxhsqQTCfbf6AjI2Vr4hf0pOzgBjU
+{
+    
+}
+###
+
+PUT http://127.0.0.1:8000/api/books/19
+content-type: application/json
+
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzQwMTU0NTUwLCJleHAiOjE3NDAxNTgxNTAsIm5iZiI6MTc0MDE1NDU1MCwianRpIjoibW9tTVFyYTVmd3hjQjUwYyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.b7WeZiMzkCIPdXyxhsqQTCfbf6AjI2Vr4hf0pOzgBjU
+{
+    "title": "akhezanei",
+    "description": "jij",
+    "type": "Essai",
+    "language": "francais",
+    "editor": "jij",
+    "category": "Documentaires",
+    "price": 22.00,
+    "author": "jij",
+    "cover": "no-cover.png"
+}
