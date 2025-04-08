@@ -23,7 +23,7 @@
                         <!-- Categories -->
                         <div class="mb-4">
                             <h6>Categories</h6>
-                            <form action="{{ route('books.index') }}" method="GET">
+                            <form id="filtering-form" action="{{ route('books.index') }}" method="GET">
                                 @foreach(request()->query() as $key => $value)
                                     @if($key !== 'category')
                                         @if(is_array($value))
@@ -37,7 +37,7 @@
                                 @endforeach
                                 <select class="form-select" id="category" name="category">
                                     @php
-                                        $categoriesArr = ["Documentaires", "Poésie", "Mangas", "Journaux", "Magazines", "Albums", "Technologie"];
+                                        $categoriesArr = ["Documentaires", "Poésie", "Mangas", "Journaux", "Magazines", "Albums", "Technologie"];
                                     @endphp
                                     <option value="" selected>Tous</option>
                                     @foreach ($categoriesArr as $value)
@@ -49,7 +49,7 @@
                         <script>
                             const category = document.querySelector("#category");
                             category.addEventListener("change", (e) => {
-                                document.querySelector("form").submit();
+                                document.querySelector("#filtering-form").submit();
                             })
                         </script>
 
@@ -83,16 +83,16 @@
                                     <label class="form-check-label" for="Manuel_scolaire">Manuel scolaire</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="type[]" value="Livre de référence" type="checkbox" id="Livre_de_reference" {{ is_array(request('type')) && in_array('Livre de référence', request('type')) ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="Livre_de_reference">Livre de référence</label>
+                                    <input class="form-check-input" name="type[]" value="Livre de référence" type="checkbox" id="Livre_de_reference" {{ is_array(request('type')) && in_array('Livre de référence', request('type')) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="Livre_de_reference">Livre de référence</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" name="type[]" value="Livre jeunesse" type="checkbox" id="Livre_jeunesse" {{ is_array(request('type')) && in_array('Livre jeunesse', request('type')) ? 'checked' : '' }}>
                                     <label class="form-check-label" for="Livre_jeunesse">Livre jeunesse</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" name="type[]" value="Bande dessinée" type="checkbox" id="Bande_dessinee" {{ is_array(request('type')) && in_array('Bande dessinée', request('type')) ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="Bande_dessinee">Bande dessinée</label>
+                                    <input class="form-check-input" name="type[]" value="Bande dessinée" type="checkbox" id="Bande_dessinee" {{ is_array(request('type')) && in_array('Bande dessinée', request('type')) ? 'checked' : '' }}>
+                                    <label class="form-check-label" for="Bande_dessinee">Bande dessinée</label>
                                 </div>
                             </form>
                             <script>
